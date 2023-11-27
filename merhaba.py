@@ -1,3 +1,3 @@
 #!/usr/bin/python
 
-print "Merhaba Dunya"
+print "İsmail Öner Ödev Yapıldı"
