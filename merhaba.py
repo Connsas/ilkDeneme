@@ -15,7 +15,6 @@ class Titles(Resource):
       urlTitle = "https://poetrydb.org/title"
       responseTitle = requests.get(urlTitle)
       jsonData = responseTitle.json()
-      jsonData = "merhaba"
       return jsonData, 200
 
 class Poems(Resource):
@@ -25,16 +24,15 @@ class Poems(Resource):
       responsePoems = requests.get(urlPoems)
       jsonData = responsePoems.json()
       return jsonData, 200
-      
+
 
 api.add_resource(Titles, '/title')
 
-api.add_resource(Poems, '/poem/<string:poemTitle>')
+api.add_resource(Poems, '/title/poem/<string:poemTitle>')
 
 
 if __name__ == '__main__':
 
-   app.run(host="0.0.0.0", port=6767)
+   app.run(host="0.0.0.0")
 
    app.run()
-
