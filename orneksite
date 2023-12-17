@@ -1,0 +1,14 @@
+server {
+listen 6767;
+
+location / {
+  include proxy_params;
+  proxy_pass http://unix:/opt/odev1/ilkDeneme/merhaba.sock;
+    }
+
+
+location /static  {
+    include  /etc/nginx/mime.types;
+    root /opt/odev1/ilkDeneme/;
+  }
+}
