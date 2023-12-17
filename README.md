@@ -1,7 +1,8 @@
 # ilkDeneme Projesi
 Github'a alışmak için ilk çatallanması önerilen deneme proje.
 
-Aşşağıdaki yapıda daha önceden oluşturduğumuz api bir servise dönüştürülüyor ve gunicorn ile 5 workerla çalıştırılıyor, böylece herhangi bir workerın çökmesi durumunda bütün sistem çökmüyor.
+```
+//Aşşağıdaki yapıda daha önceden oluşturduğumuz api bir servise dönüştürülüyor ve gunicorn ile 5 workerla çalıştırılıyor, böylece herhangi bir workerın çökmesi durumunda bütün sistem çökmüyor.
 [Unit]
 Description=AKYG dersi icin olsuturdugum api in servise cevirilmesi.
 After=network.target
@@ -14,8 +15,9 @@ ExecStart=/usr/bin/gunicorn --workers 5 --bind unix:merhaba.sock -m 007 wsgi:app
 
 [Install]
 WantedBy=multi-user.target
-
-Nginx için ayarlamalar.
+```
+```
+//Nginx için ayarlamalar.
 server {
 listen 6767; //Port forwardingte vm de 6767 portunu kullandığım için burada 6767 portunu giriyorum.
 
@@ -30,4 +32,5 @@ location /static  {
     root /opt/odev1/ilkDeneme/;
   }
 }
+```
 
