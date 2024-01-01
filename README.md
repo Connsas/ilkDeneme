@@ -70,9 +70,17 @@ ENV PYTHONUNBUFFERED 1
 
 # install dependencies
 RUN pip install --upgrade pip
-COPY ./requirements.txt /opt/odev1/ilkDeneme/requirements.txt
+COPY ./requirements.txt /opt/odev1/ilkDeneme/requirements.txt // indirmemiz gereken bağımlılıkları txt den okuyarak containera dahil ediyor.
 RUN pip install -r requirements.txt
 
 # copy project
 COPY . /opt/odev1/ilkDeneme/
+```
+```
+#requirements.txt'nin içi projede gerekli bağımlılıkların belirtildiği yer.
+flask
+pandas
+requests
+flask_restful
+gunicorn
 ```
