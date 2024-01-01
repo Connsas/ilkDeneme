@@ -1,0 +1,5 @@
+flask
+pandas
+requests
+flask_restful
+gunicorn
