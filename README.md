@@ -56,6 +56,7 @@ services:
     depends_on:
       - web
 ```
+```
 #Proje için docker ayarlamaları.
 # pull official base image
 FROM python:3.11.3
