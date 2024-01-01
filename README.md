@@ -39,3 +39,20 @@ from merhaba import app
 if __name__ == "__main__":
     app.run
 ```
+```
+version: '3.8'
+
+services:
+  web:
+    build: /opt/odev1/ilkDeneme
+    command: gunicorn --workers 5 --bind 0.0.0.0:5001 merhaba:app //container çalıştırıldığı zaman gunicorn ile ayağa kaldırıyoruz.
+    ports:
+      -  5000:5001 
+  nginx:
+    build: /opt/odev1/ilkDeneme/nginx
+    command: sudo systemctl start nginx.service 
+    ports:
+      - 81:80
+    depends_on:
+      - web
+```
