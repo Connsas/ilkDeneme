@@ -40,6 +40,7 @@ if __name__ == "__main__":
     app.run
 ```
 ```
+#birden fazla containerın birbiriyle haberleşmesini sağladığınız conf dosyası.
 version: '3.8'
 
 services:
