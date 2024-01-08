@@ -3,7 +3,6 @@ from flask_restful import Api, Resource
 import pandas as pd
 import requests
 import json as js
-import random as rn
 
 app = Flask(__name__)
 
@@ -20,13 +19,23 @@ class Titles(Resource):
 class Poems(Resource):
 
    def get(self,poemTitle):
-      urlPoems = "https://poetrydb.org/title/"+ poemTitle + "/lines.json"
+      urlPoems = "https://poetrydb.org/title/"+ poemTitle
       responsePoems = requests.get(urlPoems)
       jsonData = responsePoems.json()
       return jsonData, 200
 
+class Authors(Resource):
+
+   def get(self):
+      urlAuthor = "https://poetrydb.org/author"
+      responseAuthor = requests.get(urlAuthor)
+      jsonData = responseAuthor.json()
+      return jsonData, 200   
+
 
 api.add_resource(Titles, '/title')
+
+api.add_resource(Authors, '/author')
 
 api.add_resource(Poems, '/title/poem/<string:poemTitle>')
 
