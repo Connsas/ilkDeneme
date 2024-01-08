@@ -1,10 +1,12 @@
 from flask import Flask, request
 from flask_restful import Api, Resource
+from flask_cors import CORS
 import pandas as pd
 import requests
 import json as js
 
 app = Flask(__name__)
+CORS(app)
 
 api = Api(app)
 
