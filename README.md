@@ -83,6 +83,7 @@ flask
 pandas
 requests
 flask_restful
+flask_cors
 gunicorn
 ```
 ```
